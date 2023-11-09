@@ -1,18 +1,20 @@
+import useStorage from '../hook/useStorage';
 import './productDetail.css'
 
-import { useState } from 'react';
 // import HeaderProduct from '../components/Products/header/HeaderProduct';
 // import ListProducts from '../components/Products/body/ListProducts';
 
 
 const ProductDetail = () => {
-    const [ quantity, setQuantity] = useState(1);
+    // hook personalizado para guardar datos en el localstorage
+    const [ quantity, setQuantity ] = useStorage('product-quantity-storage', 1)
+    
     // funcion para incrementar la cantidad de productos
     const quantityIncrement = (e) => {
         e.preventDefault()
         setQuantity( quantity + 1 )
     }
-    // funcion para decrementar la cantidad de productos
+    // funcion para decrementar la cantidad de productos, evita llegar a 0 o a un numero negativo
     const quantityDecrement = (e) => {
         e.preventDefault()
         if(quantity == 1){
@@ -20,8 +22,6 @@ const ProductDetail = () => {
         }
         setQuantity( quantity - 1 )
     }
-    // const location = useLocation();
-    // const list = location.state;
     return(
         <div className="container">
             <div className="product-detail row">
