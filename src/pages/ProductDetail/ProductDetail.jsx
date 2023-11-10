@@ -27,7 +27,9 @@ const ProductDetail = () => {
                     <div className="product-detail__content--title">
                         <h2>White traditional long shirt</h2>
                         <div className="d-flex align-items-center">
-                            <span>20/10/2022</span>
+                            <span className='me-2'>20/10/2022</span>
+                            <span>SKU: CAM-001</span>
+                            
 
                             <div className="in-stock d-flex align-items-center">
                                 <span>En stock</span>
@@ -70,6 +72,7 @@ const ProductDetail = () => {
                         </div>
 
                         <div className="product-detail__more">
+                            <p>Cantidad maxima: 13</p>
                             <div className='d-flex'>
                                 <QuantityForm />
                                 <Button classname="product-detail__more--buy" icon='fas fa-dollar'>Comprar</Button>

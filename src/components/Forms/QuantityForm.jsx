@@ -15,6 +15,8 @@ const QuantityForm = () => {
         e.preventDefault()
         if(quantity == 1){
             return setQuantity(1)
+        }else if(quantity > 13){
+            return setQuantity(13)
         }
         setQuantity( quantity - 1 )
     }
