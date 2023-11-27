@@ -87,6 +87,10 @@ class Slider
     actualSlider(){
         return this.actualSlide;
     }
+    changeSlider(){
+        this.actualSlide = 0; 
+        this.moveRight();
+    }
 }
 
 export default Slider
